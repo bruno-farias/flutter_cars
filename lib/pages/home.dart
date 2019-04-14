@@ -21,29 +21,27 @@ class Home extends StatelessWidget {
     return ListView.builder(
         itemCount: cars.length,
         itemBuilder: (BuildContext context, int index) {
-          final car = cars[index];
-
           return Container(
-            height: 250,
+            // height: 250,
             child: Card(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Expanded(
-                    flex: 9,
-                    child: Image.network(cars[index].image),
-                  ),
-                  Expanded(
-                    flex: 3,
-                    child: Container(
-                      color: Colors.grey,
-                      child: Center(
-                        child: Text(
-                          cars[index].name,
-                          style: TextStyle(color: Colors.white, fontSize: 24.0),
+                  Stack(
+                    alignment: Alignment.topCenter,
+                    children: <Widget>[
+                      Image.network(cars[index].image),
+                      Container(
+                        color: Colors.black45,
+                        child: Center(
+                          child: Text(
+                            cars[index].name,
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 24.0),
+                          ),
                         ),
-                      ),
-                    ),
+                      )
+                    ],
                   ),
                   ButtonTheme.bar(
                     child: ButtonBar(
